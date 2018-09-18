@@ -1,0 +1,67 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+    <variable
+      name="RateUIMDecorator"
+      type="com.bdswiss.bdswiss.model.ui.RateUIMDecorator"/>
+  </data>
+
+  <android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/spacing_72"
+    android:layout_marginStart="@dimen/vertical_keyline_primary"
+    android:layout_marginEnd="@dimen/vertical_keyline_primary">
+
+    <android.support.constraint.ConstraintLayout
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <TextView
+        android:id="@+id/symbol"
+        style="@style/Subhead.Black.Primary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="@{RateUIMDecorator.getSymbol}"
+        app:layout_constraintBottom_toTopOf="@+id/price"
+        app:layout_constraintEnd_toStartOf="@+id/image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="GBPEUR"/>
+
+      <TextView
+        android:id="@+id/price"
+        style="@style/Body1.Black.Secondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@{RateUIMDecorator.getPrice}"
+        app:layout_constraintEnd_toStartOf="@+id/image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/symbol"
+        tools:text="1.3930283283"/>
+
+      <ImageView
+        android:id="@+id/image"
+        android:layout_width="@dimen/spacing_48"
+        android:layout_height="@dimen/spacing_48"
+        android:src="@{RateUIMDecorator.getDrawable}"
+        android:visibility="@{RateUIMDecorator.getDrawableVisibility}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/price"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="VectorDrawableCompat"
+        tools:srcCompat="@drawable/ic_arrow_drop_down_red_24dp"
+        tools:visibility="visible"/>
+    </android.support.constraint.ConstraintLayout>
+
+
+  </android.support.constraint.ConstraintLayout>
+
+</layout>

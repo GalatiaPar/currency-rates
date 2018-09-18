@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">BDSwiss</string>
+  <string name="main_activity_toolbar_title">Current Rates</string>
+  <string name="main_activity_error_message">Oops! Something went wrong. \nPlease check your Internet connection and try again.</string>
+</resources>
